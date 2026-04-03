@@ -1,0 +1,33 @@
+export const CITIES = [
+  "English",
+  "Spanish",
+  "French",
+  "German",
+  "Mandarin",
+  "Japanese",
+  "Korean",
+  "Hindi",
+  "Russian",
+  "Portuguese",
+  "Arabic",
+  "Italian",
+  "Turkish",
+  "Dutch",
+];
+
+export const STATES = [
+  "English",
+  "Spanish",
+  "French",
+  "German",
+  "Mandarin",
+  "Japanese",
+  "Korean",
+  "Hindi",
+  "Russian",
+  "Portuguese",
+  "Arabic",
+  "Italian",
+  "Turkish",
+  "Dutch",
+];

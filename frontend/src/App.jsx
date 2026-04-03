@@ -55,9 +55,9 @@ import ChangePassword from "./pages/ChangePassword.jsx";
           <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />
         )}/>
         
-<Route path="/userProfile" element={isAuthenticated && isOnboarded ? (
+<Route path="/" element={isAuthenticated && isOnboarded ? (
           <Layout showsidebar={true}>
-            <UserProfile />
+            <HomePage />
           </Layout>
         ) : (
           <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />

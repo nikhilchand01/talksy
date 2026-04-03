@@ -35,7 +35,7 @@ const Sidebar = () => {
      
      </nav>
      {/* user profile */}
-     <Link to="/userProfile">
+     <Link to="/">
      <div className="p-4 border-t border-base-300 mt-auto">
       <div className="flex items-center gap-4">
         <div className="avatar">

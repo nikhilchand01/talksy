@@ -293,9 +293,9 @@ export async function changePassword(req, res){
 export async function onboard(req, res) {
   try {
     const userId = req.user._id;
-    const { fullName, bio, nativeLanguage, age , location } = req.body;
+    let { fullName, bio, nativeLanguage, age , location, profilePic } = req.body;
 
-    if (!fullName || !bio || !nativeLanguage || !age || !location) {
+    if (!fullName || !bio || !nativeLanguage || !age || !location || !profilePic) {
       return res.status(400).json({
         message: "All fields are required",
         missingFields: [
@@ -309,20 +309,20 @@ export async function onboard(req, res) {
     }
 
     // Upload image if provided
-    let profilePicUrl = "";
+    
     if (req.file) {
       const uploadResult = await cloudinary.uploader.upload(req.file.path, {
         folder: "user_profiles",
         resource_type: "image",
       });
-      profilePicUrl = uploadResult.secure_url;
+      profilePic = uploadResult.secure_url;
     }
 
     const updateUser = await User.findByIdAndUpdate(
       userId,
       {
         ...req.body,
-        profilePic: profilePicUrl || req.body.profilePic || "",
+        profilePic: profilePic || req.body.profilePic || "https://avatar.iran.liara.run/public/1.png",
         isOnboarded: true,
       },
       { new: true }

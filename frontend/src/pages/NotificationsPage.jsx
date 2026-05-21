@@ -42,7 +42,7 @@ const NotificationsPage = () => {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
                           <div className="avatar w-14 h-14 rounded-full bg-base-300">
-                          <img src={request.sender.profilePic} alt={request.sender.fullName} />
+                          <img src={request.sender.profilePic || null} alt={request.sender.fullName} />
                           </div>
                           <div>
                           <h3 className="font-semibold">{request.sender.fullName}</h3>
